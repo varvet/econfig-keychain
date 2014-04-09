@@ -1,3 +1,5 @@
+$stderr.puts "If asked for a password, the password is empty. Just press OK."
+
 require "econfig-keychain"
 
 Econfig.root = __dir__
