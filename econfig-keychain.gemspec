@@ -6,8 +6,8 @@ require 'econfig/keychain/version'
 Gem::Specification.new do |spec|
   spec.name          = "econfig-keychain"
   spec.version       = Econfig::Keychain::VERSION
-  spec.authors       = ["Kim Burgestrand"]
-  spec.email         = ["kim@burgestrand.se"]
+  spec.authors       = ["Kim Burgestrand", "Elabs AB"]
+  spec.email         = ["kim@burgestrand.se", "dev@elabs.se"]
   spec.summary       = %q{An OSX keychain adapter for Econfig.}
   spec.homepage      = ""
   spec.license       = "MIT"
