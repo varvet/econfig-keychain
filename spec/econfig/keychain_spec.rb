@@ -17,6 +17,19 @@ describe Econfig::Keychain do
     FileUtils.rm(keychain_path)
   end
 
+  describe "#init" do
+    it "creates the note in the keychain if it does not exist" do
+      Econfig.stub(env: "different")
+      expect { backend.init }.to change { keychain[backend.project_name] }
+        .from(nil).to("")
+    end
+
+    it "does not overwrite existing data" do
+      backend.init
+      backend.get("i exist").should eq "this exist"
+    end
+  end
+
   describe "#get" do
     it "fetches an option from the keychain" do
       backend.get("i exist").should eq "this exist"

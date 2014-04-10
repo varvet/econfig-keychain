@@ -8,6 +8,18 @@ module Econfig
       @store = ::Mellon::Store.new(name, keychain: keychain)
     end
 
+    def project_name
+      @store.project_name
+    end
+
+    def keychain
+      @store.keychain
+    end
+
+    def init
+      keychain[project_name] ||= ""
+    end
+
     def get(key)
       @store[key]
     end
