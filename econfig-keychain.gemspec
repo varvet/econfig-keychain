@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kim Burgestrand", "Elabs AB"]
   spec.email         = ["kim@burgestrand.se", "dev@elabs.se"]
   spec.summary       = %q{An OSX keychain adapter for Econfig.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/elabs/econfig-keychain"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
