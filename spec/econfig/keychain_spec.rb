@@ -19,7 +19,7 @@ describe Econfig::Keychain do
 
   describe "#init" do
     it "creates the note in the keychain if it does not exist" do
-      Econfig.stub(env: "different")
+      Econfig.stub(root: "different")
       expect { backend.init }.to change { keychain[backend.project_name] }
         .from(nil).to("")
     end
