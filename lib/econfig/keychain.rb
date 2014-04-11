@@ -4,7 +4,7 @@ require "econfig"
 module Econfig
   class Keychain
     def initialize(keychain, name: nil)
-      name ||= [File.basename(Econfig.root), Econfig.env].join("-")
+      name ||= File.basename(Econfig.root)
       @store = ::Mellon::Store.new(name, keychain: keychain)
     end
 

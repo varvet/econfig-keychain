@@ -34,7 +34,7 @@ MyApp.aws_access_key_id = "xyz"
 You can also edit your configuration manually using the Mellon CLI:
 
 ```
-bundle exec mellon edit myapp-development
+bundle exec mellon edit myapp
 ```
 
 # License
