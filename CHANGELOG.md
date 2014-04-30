@@ -1,6 +1,12 @@
 [HEAD][]
 --------
 
+[v1.0.2][]
+----------
+
+- Allow specifying project name in Econfig.use_keychain [974df0db]
+- Enforce Econfig.init, works better with Rails as well [1680b780]
+
 [v1.0.1][]
 ----------
 
@@ -17,6 +23,7 @@
 
 Initial release!
 
-[HEAD]: https://github.com/elabs/econfig-keychain/compare/v1.0.1...HEAD
+[HEAD]: https://github.com/elabs/econfig-keychain/compare/v1.0.2...HEAD
+[v1.0.2]: https://github.com/elabs/econfig-keychain/compare/v1.0.1...v1.0.2
 [v1.0.1]: https://github.com/elabs/econfig-keychain/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/elabs/econfig-keychain/compare/f877fd49...v1.0.0
