@@ -4,28 +4,27 @@ require "econfig"
 module Econfig
   class Keychain
     def initialize(keychain, name: nil)
-      name ||= File.basename(Econfig.root)
-      @store = ::Mellon::Store.new(name, keychain: keychain)
-    end
-
-    def project_name
-      @store.project_name
-    end
-
-    def keychain
-      @store.keychain
+      @init = { keychain: keychain, name: name }
     end
 
     def init
-      keychain[project_name] ||= ""
+      project_name = @init[:name] || File.basename(Econfig.root)
+      @store = ::Mellon::Store.new(project_name, keychain: @init[:keychain])
+      @store.keychain[@store.project_name] ||= ""
     end
 
     def get(key)
-      @store[key]
+      store[key]
     end
 
     def set(key, value)
-      @store[key] = value
+      store[key] = value
+    end
+
+    private
+
+    def store
+      @store or raise Econfig::UninitializedError
     end
   end
 end
