@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = "~> 2.0"
 
-  spec.add_dependency "econfig"
+  spec.add_dependency "econfig", "~> 1.0"
   spec.add_dependency "mellon", "~> 1.0"
 
   spec.add_development_dependency "bundler", "~> 1.6"
