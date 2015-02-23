@@ -3,14 +3,16 @@ require "econfig"
 
 module Econfig
   class Keychain
-    def initialize(keychain, name: nil)
-      @init = { keychain: keychain, name: name }
+    attr_reader :store
+
+    def initialize(keychain, name)
+      @store = ::Mellon::Store.new(name, keychain: keychain)
     end
 
-    def init
-      project_name = @init[:name] || File.basename(Econfig.root)
-      @store = ::Mellon::Store.new(project_name, keychain: @init[:keychain])
-      @store.keychain[@store.project_name] ||= ""
+    def has_key?(key)
+      true if store.fetch(key)
+    rescue KeyError
+      false
     end
 
     def get(key)
@@ -19,12 +21,6 @@ module Econfig
 
     def set(key, value)
       store[key] = value
-    end
-
-    private
-
-    def store
-      @store or raise Econfig::UninitializedError
     end
   end
 end
